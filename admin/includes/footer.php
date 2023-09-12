@@ -1,10 +1,7 @@
-<footer class="bg-blue-500 body-font">
+<footer class="bg-[#EEEFFF] body-font mt-10">
   <div class="container px-4 py-4 mx-auto flex items-center sm:flex-row flex-col">
     <a class="flex title-font font-medium items-center md:justify-start justify-center ">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span class="ml-3 text-xl">Sairam-LMS</span>
+    <img src="http://localhost:8081/sairam_lms/admin/images/sabas..png" alt="Your Logo" class="h-7 hidden lg:block">
     </a>
     <p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2023 future8.infotech@gmail.com —
       <a href="https://twitter.com/knyttneve" class=" ml-1" rel="noopener noreferrer" target="_blank">@future8</a>

@@ -37,25 +37,33 @@ if (isset($_GET['delete_book'])) {
             background-color: #f1f1f1;
             color: #333;
         }
-        table,tr,td{
-            border-bottom:1px solid gray;
-            font-size:14px; 
-         
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-left:10px
         }
         th{
-            background-color:rgb(220,220,220);
-            position: sticky;
-            top:0px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background: linear-gradient(269deg, #B3A3FE 22.86%, #B1B9FF 91.9%);
+            
+
         }
-        table{
-           border-collapse:separate;
-            border-spacing:0px;
-            min-width:max-content;
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            background: #EEEFFF;
         }
 
+        th {
+            background-color: #f2f2f2;
+        }
         .outer{
             box-shadow: 0px 0px 3px black;
-            margin:20px;
             max-width:fit-content;
             /* position:fixed; */
         }
@@ -63,91 +71,18 @@ if (isset($_GET['delete_book'])) {
         min-height:50vh;
         max-height:60vh;
         overflow-y:scroll;
-        margin:20px;
        }
        
     </style>
 </head>
 <body>
 
-<header class="bg-blue-500">
-        <div class="container mx-auto py-4 px-6 flex justify-between items-center">
-            <h1 class="text-white text-3xl font-bold">SABAS</h1>
-            <nav>
-                <ul class="flex space-x-4 text-white text-lg">
-                    <!-- <li><a href="index.php" class="active">Home</a></li>
-                    <li><a href="books.php">Manage Books</a></li>
-                    <li><a href="add_books.php">Add Books</a></li>
-                    <li><a href="members2.php">Manage Members</a></li>
-                    <li><a href="borrowings.php">Manage Borrowings</a></li> -->
-                    <li class="px-4 py-1  hover:bg-gray-100 hover:text-gray-900 bg-blue-900" ><a onclick="document.location='../../index.php'">Home</a></li>
-                   
-
-                    <?php
-
-if(isset($_SESSION['authenticated']) == true)
-    {
-        ?>
-                     <li class="px-4 py-1  hover:bg-gray-100 hover:text-gray-900 bg-blue-900" ><a onclick="document.location='../dashboard.php'">Dashboard</a></li>
-
-                    <li class="px-4 py-1  hover:bg-gray-100 hover:text-gray-900 bg-blue-900 relative group dropdown">
-                        <a href="#" class="dropbtn">members</a>
-                        <div class="dropdown-content absolute hidden bg-white shadow-lg  py-1 z-10" nowrap style="margin-top: 3px;">
-                            <a href="../members/members2.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Manage Members</a>
-                            <a href="../../testings/reports.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Manage Reports</a>
-                            <a href="../circulation.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Settings</a>
-                           
-                        </div>
-                       
-                    </li>
-                    <li class="px-4 py-1 relative group dropdown hover:bg-gray-100 hover:text-gray-900 bg-blue-900">
-                        <a href="" class="dropbtn">books</a>
-                        <div class="dropdown-content absolute hidden bg-white shadow-lg mt-2 py-2 z-10" style="margin-top: 3px;">
-                            <a href="./add_books.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Add Books</a>
-                            <a href="./books.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Book List</a>
-                            <a href="./borrowings.php" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Borrowings</a>
-                           
-                        </div>
-                    </li>
-                    <li class=" px-4 py-1  relative group dropdown hover:bg-gray-100 hover:text-gray-900 bg-blue-900">
-                        <a href="../academics/academics.php" class="dropbtn">Academics</a>
-                        <div class="dropdown-content absolute hidden bg-white shadow-lg mt-2 py-2 z-10" style="margin-top: 3px;">
-                            <a href="../academics/academics.php#department" class="block px-4 py-2 text-gray-800 hover:bg-gray-300" style=" width: 160px;font-size: 15px;
-    ">Department</a>
-                            <a href="../academics/academics.php#class" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Class</a>
-                            <a href="../academics/academics.php#year" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Year</a>
-                            <a href="../academics/academics.php#course" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" style=" width: 160px;font-size: 15px;
-    ">Course</a>
-                        </div>
-                    </li>
-
-                
-                    <li class="px-4 py-1 hover:bg-gray-200 hover:text-gray-900 bg-blue-900" ><a href="../logout.php">Logout</a></li>
-
-                    <?php
-                        }
-                        else{
-
-                        ?>
-                         <li class="px-4 py-1  hover:bg-gray-100 hover:text-gray-900 bg-blue-900" ><a href="./admin/login.php">Admin Login</a></li>
-                         <?php
-
-                        }
-                        ?>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<?php
+include '../includes/header.php';
+?>
 
 
+<h1 class="text-center text-gray-900 font-bold text-2xl mx-auto mt-2 mb-4">Book List</h1>
       
 <div class=" mx-auto px-3">
     <div class="container2 ml-10 mr-10 flex justify-center items-center" style="width:75vw;height:11vh">
@@ -162,8 +97,8 @@ if(isset($_SESSION['authenticated']) == true)
             <div class="flex">
             <label class="block mx-2" style="width: fit-content;
     text-align: center; font-weight:bold;padding-top:5px">Search Book:</label>
-                <input type="text" name="searchInput" id="searchInput" class="w-full px-2 py-1 border border-gray-300 " placeholder="Enter a search term">
-                <select name="subjectFilter" class="ml-2 px-2 py-1 border border-gray-300">
+                <input type="text" name="searchInput" id="searchInput" class="w-3/4 px-8 py-2 m-4 border-violet-500 border rounded-xl " placeholder="Enter a search term">
+                <select name="subjectFilter" class="w-3/4 px-8 py-2 m-4 border-violet-500 border rounded-xl">
         <option value="">Select Subject</option>
         <?php
     $sqlSubjects = "SELECT DISTINCT subject FROM books WHERE TRIM(subject) <> ''";
@@ -175,7 +110,7 @@ if(isset($_SESSION['authenticated']) == true)
     }
     ?>
     </select>
-    <select name="departmentFilter" class="ml-2 px-2 py-1 border border-gray-300">
+    <select name="departmentFilter" class="w-3/4 px-8 py-2 m-4 border-violet-500 border rounded-xl">
         <option value="">Select Department</option>
         <?php
     $sqlDepartments = "SELECT DISTINCT department FROM books WHERE TRIM(department) <> ''";
@@ -189,7 +124,7 @@ if(isset($_SESSION['authenticated']) == true)
     </select>
 
 
-                <button type="submit" name="search" class="ml-2 bg-blue-500 text-white px-4 py-2 ">Search</button>
+                <button type="submit" name="search" class=" w-1/2 ml-5 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 text-white px-4 py-2 m-4 ">Search</button>
             </div>
         </form>
 
@@ -239,41 +174,6 @@ $endPage = min($endPage, $totalPages);
 $startPage = max(1, $startPage);
 
 ?>
-<div class=" books flex items-center justify-center space-x-2 m-2">
-
-    <?php if ($totalPages > 1): ?>
-        <?php if ($currentPage > 1): ?>
-            <a href="<?php echo getPageUrl($currentPage - 1); ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ">Previous</a>
-        <?php endif; ?>
-
-        <?php if ($startPage > 1): ?>
-            <a href="<?php echo getPageUrl(1); ?>" class="bg-blue-200 hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 ">1</a>
-            <?php if ($startPage > 2): ?>
-                <span class="current bg-blue-500 text-white font-bold py-2 px-4 ">...</span>
-            <?php endif; ?>
-        <?php endif; ?>
-
-        <?php for ($i = $startPage; $i <= $endPage; $i++): ?>
-            <?php if ($i == $currentPage): ?>
-                <span class="current bg-blue-500 text-white font-bold py-2 px-4 "><?php echo $i; ?></span>
-            <?php else: ?>
-                <a href="<?php echo getPageUrl($i); ?>" class="bg-blue-200 hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 "><?php echo $i; ?></a>
-            <?php endif; ?>
-        <?php endfor; ?>
-
-        <?php if ($endPage < $totalPages): ?>
-            <?php if ($endPage < $totalPages - 1): ?>
-                <span class="current bg-blue-500 text-white font-bold py-2 px-4 ">...</span>
-            <?php endif; ?>
-            <a href="<?php echo getPageUrl($totalPages); ?>" class="bg-blue-200 hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 "><?php echo $totalPages; ?></a>
-        <?php endif; ?>
-
-        <?php if ($currentPage < $totalPages): ?>
-            <a href="<?php echo getPageUrl($currentPage + 1); ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ">Next</a>
-        <?php endif; ?>
-    <?php endif; ?>
-</div>
-
 <?php
 // Function to generate the page URL with the given page number
 function getPageUrl($pageNumber) {
@@ -373,9 +273,9 @@ function getPageUrl($pageNumber) {
                           {
                               ?>
           
-                      <a href="issue.php?book_id=<?php echo $row['book_id']; ?>" style="border:#428bca" class="relative inline-flex items-center justify-center  px-6  overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out border-2 -full shadow-md group">
+                      <a href="issue.php?book_id=<?php echo $row['book_id']; ?>" style="border:#428bca" class="relative inline-flex items-center justify-center  px-6  overflow-hidden font-medium  text-indigo-600 transition duration-300 ease-out border-2 -full shadow-md group">
                        
-<span style="background-color:#428bca;" class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full group-hover:translate-x-0 ease" name="issue_page" value="issue">
+<span style="background-color:#428bca;" class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full group-hover:translate-x-0 ease group-hover:bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400" name="issue_page" value="issue">
 <svg class="w-6 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
 </span>
 <span style="text:#428bca" class="absolute flex items-center justify-center w-full h-full  transition-all duration-300 transform group-hover:translate-x-full ease">Issue Book</span>
@@ -422,10 +322,46 @@ function getPageUrl($pageNumber) {
               </table>
           </div>
 </div>
+<div class=" books flex items-center justify-center space-x-2 m-2">
 
+    <?php if ($totalPages > 1): ?>
+        <?php if ($currentPage > 1): ?>
+            <a href="<?php echo getPageUrl($currentPage - 1); ?>" class="bg-[#b4a2fc] hover:bg-blue-700 text-white font-bold py-2 px-4 ">Previous</a>
+        <?php endif; ?>
+
+        <?php if ($startPage > 1): ?>
+            <a href="<?php echo getPageUrl(1); ?>" class="bg-[#EEEFFF] hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 ">1</a>
+            <?php if ($startPage > 2): ?>
+                <span class="current bg-black text-white font-bold py-2 px-4 ">...</span>
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <?php for ($i = $startPage; $i <= $endPage; $i++): ?>
+            <?php if ($i == $currentPage): ?>
+                <span class="current bg-black text-white font-bold py-2 px-4 "><?php echo $i; ?></span>
+            <?php else: ?>
+                <a href="<?php echo getPageUrl($i); ?>" class="bg-[#EEEFFF] hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 "><?php echo $i; ?></a>
+            <?php endif; ?>
+        <?php endfor; ?>
+
+        <?php if ($endPage < $totalPages): ?>
+            <?php if ($endPage < $totalPages - 1): ?>
+                <span class="current bg-black text-white font-bold py-2 px-4 ">...</span>
+            <?php endif; ?>
+            <a href="<?php echo getPageUrl($totalPages); ?>" class="bg-[#EEEFFF] hover:bg-blue-300 text-blue-700 font-bold py-2 px-4 "><?php echo $totalPages; ?></a>
+        <?php endif; ?>
+
+        <?php if ($currentPage < $totalPages): ?>
+            <a href="<?php echo getPageUrl($currentPage + 1); ?>" class="bg-[#b4a2fc] hover:bg-blue-700 text-white font-bold py-2 px-4 ">Next</a>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>
 </div>
 
   </div>
+  <?php
+include '../includes/footer.php';
+?>
 </body>
 </html>
 
