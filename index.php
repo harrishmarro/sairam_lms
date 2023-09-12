@@ -205,5 +205,8 @@ if(isset($_SESSION['authenticated']) == true)
  
   
 </div>
+<?php
+include 'admin/includes/footer.php';
+?>
 </body>
 </html>

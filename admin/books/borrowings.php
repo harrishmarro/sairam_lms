@@ -360,6 +360,9 @@ $result = $conn->query($sql);
         <!-- Third Row -->
       </div>
       </div>
+      <?php
+include '../includes/footer.php';
+?>
 </body>
 </html>
 
