@@ -47,7 +47,7 @@ session_start();
                             <a href="http://localhost:8081/sairam_lms/admin/academics/academics.php#course" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Course</a>
                         </div>
                     </li>
-                    <li class="px-4 py-1 hover:bg-gray-200 hover:text-red-900 bg-white-900 font-bold">
+                    <li class="px-4 py-1 text-red-600 hover:bg-gray-200 hover:text-red-700 bg-white-900 font-bold">
                         <a href="http://localhost:8081/sairam_lms/admin/logout.php">Logout</a>
                     </li>
                     <?php
