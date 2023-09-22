@@ -213,9 +213,9 @@ $conn->close();
 
     <form action="generate_report.php" method="get">
 
-    <div class="grid grid-cols-3 sm:grid-cols-7 gap-1 m-3">
+    <div class="grid grid-cols-3 sm:grid-cols-7 gap-1  m-3">
         <!-- Row 1 -->
-        <div class="bg-blue-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
         <label for="date_selection">Select Date Range: </label>
             <select id="date_selection" class="text-gray-900 w-full py-2" name="date_selection" onchange="updateDateFields()">
                 <option value="today">Today</option>
@@ -223,24 +223,24 @@ $conn->close();
                 <option value="duration" selected>Duration</option> <!-- Default: Duration -->
             </select>
         </div>
-        <div class="bg-green-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
             
         <label for="from_date">From Date:
         <input  class="text-gray-900 w-full py-2" type="date" id="from_date" name="from_date" value="<?php echo $fromDate; ?>" required>
         </label>
         </div>
-        <div class="bg-red-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
         <label for="to_date">To Date:
         <input  class="text-gray-900 w-full py-2" type="date" id="to_date" name="to_date" value="<?php echo $toDate; ?>" required></label>
         </div>
-        <div class="bg-yellow-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
                
         <label for="search_query">Search:
         <input  class="text-gray-900 w-full py-2" type="text"  name="search_query" value="<?php echo isset($_GET['search_query']) ? $_GET['search_query'] : ''; ?>"></label>
         </div>
         
         <!-- Row 2 -->
-        <div class="bg-pink-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
         <?php
             include '../admin/connection/db.php';
     
@@ -285,7 +285,7 @@ $conn->close();
     ?>
 
         </div>
-        <div class="bg-purple-200 p-1">
+        <div class="bg-[#EEEFFF] p-1">
     <?php
             include '../admin/connection/db.php';
     
@@ -312,7 +312,7 @@ $conn->close();
     ?>
     <label for="report_type">Member Type:
     
-    <select  class="text-gray-900 w-full py-2"  name="member_type" >
+    <select  class="text-gray-900  w-full py-2"  name="member_type" >
         <option value="">All Member Types</option>
         <?php
         while($rowDistinctMemberType = $resultDistinctMemberTypes->fetch_assoc()) {
@@ -324,7 +324,7 @@ $conn->close();
     <?php
         $stmtDistinctMemberTypes->close();
     ?></div>
-        <div class="bg-indigo-200 p-1"> 
+        <div class="bg-[#EEEFFF] p-1"> 
     <label for="report_type">Report Type:
     <select  class="text-gray-900 w-full py-2" name="report_type" onchange="this.form.submit()">
         <option value="">All</option>
@@ -340,7 +340,7 @@ $conn->close();
          <!-- Dropdown for selecting date range -->
          
             
-    <button type="submit" class="block px-4 py-2 mx-auto my-2 bg-purple-500 text-gray-100">Generate Report</button>
+    <button type="submit" class="block px-4 py-2 mx-auto my-2 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 text-gray-100">Generate Report</button>
     </form>
 
 <script>
